@@ -15,7 +15,7 @@ import java.util.List;
  * @author: Qudratjon Komilov
  */
 @RestController
-@RequestMapping("/api/articles")
+@RequestMapping("/api/v1/articles")
 @RequiredArgsConstructor
 public class ArticleController {
 
@@ -31,7 +31,7 @@ public class ArticleController {
         return ResponseEntity.ok(articleService.getArticleById(id)); // This handles Optional appropriately
     }
 
-    @GetMapping("/")
+    @GetMapping("/all")
     public ResponseEntity<List<ArticleDTO>> getAllArticles() {
         return ResponseEntity.ok(articleService.getAllArticles());
     }
