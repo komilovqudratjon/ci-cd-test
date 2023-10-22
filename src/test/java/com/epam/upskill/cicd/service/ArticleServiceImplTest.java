@@ -5,7 +5,6 @@ import com.epam.upskill.cicd.model.Article;
 import com.epam.upskill.cicd.model.ArticleDTO;
 import com.epam.upskill.cicd.model.ArticleDTOMapper;
 import com.epam.upskill.cicd.repository.ArticleRepository;
-import com.epam.upskill.cicd.service.impl.ArticleService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
