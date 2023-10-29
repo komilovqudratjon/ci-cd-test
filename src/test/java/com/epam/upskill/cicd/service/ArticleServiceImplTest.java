@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-@Slf4j
+//@Slf4j
 @ExtendWith(MockitoExtension.class) // Sets up Mockito, a popular mocking framework
 public class ArticleServiceImplTest {
 
@@ -49,7 +49,7 @@ public class ArticleServiceImplTest {
 
         // Assuming your ArticleDTOMapper is a functional interface, you might need to define its behavior
         lenient().when(articleDTOMapper.apply(any(Article.class))).thenReturn(exampleArticleDTO);
-        log.info("setUp() method called");
+
     }
 
     @Test
@@ -61,7 +61,6 @@ public class ArticleServiceImplTest {
         assertNotNull(result);
         // other assertions for the properties...
         verify(articleRepository).save(any(Article.class));
-        log.info("createArticle() method called and test passed");
     }
 
     @Test
@@ -73,7 +72,6 @@ public class ArticleServiceImplTest {
         assertNotNull(result);
         // other assertions for the properties...
         verify(articleRepository).findById(1L);
-        log.info("getArticleById() method called and test passed");
     }
 
     @Test
@@ -85,7 +83,6 @@ public class ArticleServiceImplTest {
         });
 
         verify(articleRepository).findById(1L);
-        log.info("getArticleById() method called and test passed");
     }
 
     @Test
@@ -99,7 +96,6 @@ public class ArticleServiceImplTest {
         assertEquals(1, result.size());
         // other assertions for the content of the result list...
         verify(articleRepository).findAll();
-        log.info("getAllArticles() method called and test passed");
     }
 
     @Test
@@ -112,7 +108,6 @@ public class ArticleServiceImplTest {
         assertNotNull(result);
         // other assertions related to the update...
         verify(articleRepository).save(any(Article.class));
-        log.info("updateArticle() method called and test passed");
     }
 
     @Test
@@ -123,6 +118,5 @@ public class ArticleServiceImplTest {
         articleService.deleteArticle(1L);
 
         verify(articleRepository).deleteById(1L);
-        log.info("deleteArticle() method called and test passed");
     }
 }
