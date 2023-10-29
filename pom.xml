@@ -25,6 +25,16 @@
         <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
         <sonar.language>java</sonar.language>
     </properties>
+
+    <developers>
+        <developer>
+            <email>komilovqudratjon@gmail.com</email>
+            <name>Komilov Qudratjon</name>
+            <url>https://t.me/qudratjon03031999</url>
+            <id>qudratjon03031999</id>
+        </developer>
+    </developers>
+
     <dependencies>
 
         <dependency>
@@ -76,26 +86,53 @@
 
     <build>
         <plugins>
-<!--            <plugin>-->
-<!--                <groupId>org.jacoco</groupId>-->
-<!--                <artifactId>jacoco-maven-plugin</artifactId>-->
-<!--                <version>${jacoco.version}</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>jacoco-initialize</id>-->
-<!--                        <goals>-->
-<!--                            <goal>prepare-agent</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                    <execution>-->
-<!--                        <id>jacoco-site</id>-->
-<!--                        <phase>package</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>report</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+            <!--            <plugin>-->
+            <!--                <groupId>org.jacoco</groupId>-->
+            <!--                <artifactId>jacoco-maven-plugin</artifactId>-->
+            <!--                <version>${jacoco.version}</version>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <id>jacoco-initialize</id>-->
+            <!--                        <goals>-->
+            <!--                            <goal>prepare-agent</goal>-->
+            <!--                        </goals>-->
+            <!--                    </execution>-->
+            <!--                    <execution>-->
+            <!--                        <id>jacoco-site</id>-->
+            <!--                        <phase>package</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>report</goal>-->
+            <!--                        </goals>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--            </plugin>-->
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
             <plugin>
                 <groupId>org.springframework.boot</groupId>
