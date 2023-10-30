@@ -5,7 +5,6 @@ import com.epam.upskill.cicd.model.Article;
 import com.epam.upskill.cicd.model.ArticleDTO;
 import com.epam.upskill.cicd.model.ArticleDTOMapper;
 import com.epam.upskill.cicd.repository.ArticleRepository;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,7 +19,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-//@Slf4j
 @ExtendWith(MockitoExtension.class) // Sets up Mockito, a popular mocking framework
 public class ArticleServiceImplTest {
 
