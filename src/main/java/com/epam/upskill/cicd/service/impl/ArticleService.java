@@ -5,7 +5,7 @@ import com.epam.upskill.cicd.model.Article;
 import com.epam.upskill.cicd.model.ArticleDTO;
 
 import java.util.List;
-import java.util.Optional;
+
 /**
  * @description: TODO
  * @date: 20 October 2023 $
