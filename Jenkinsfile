@@ -30,7 +30,7 @@ pipeline {
     stage('Deploy to Tomcat') {
       steps {
          // Run the Spring Boot application
-         bat "start /b java -jar C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\task-three\\target\\cicd.jar"
+         bat "start /b java -jar C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\task-three\\target\\cicd.jar > output.log 2>&1"
      }
     }
   }
