@@ -31,7 +31,7 @@ pipeline {
           steps {
                script {
                       // Deploy to Tomcat using the Deploy to container Plugin
-                       deploy adapters: [tomcat8(credentialsId: 'tomcat-deploy', path: '', url: 'http://localhost:8080/')], contextPath: 'your-app-context-path', war: '**/target/*.war'
+                       deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://localhost:8080/')], contextPath: null, war: '**/*.war'
                    }
              }
        }
