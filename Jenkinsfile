@@ -29,9 +29,9 @@ pipeline {
 
     stage('Deploy to Tomcat') {
       steps {
-        deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://localhost:8080/')],
-        contextPath: null, war: '**/*.jar'
-       }
+         // Run the Spring Boot application
+         bat 'start /b java -jar C:\ProgramData\Jenkins\.jenkins\workspace\task-three\target\\cicd.jar'
+     }
     }
   }
 }
