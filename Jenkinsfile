@@ -26,6 +26,11 @@ pipeline {
           -Dsonar.projectKey=task-three'''
         }
     }
+    stage('List Files') {
+        steps {
+            bat "dir C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\task-three\\target\\"
+        }
+    }
 
     stage('Deploy to Tomcat') {
           steps {
