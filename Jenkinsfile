@@ -33,13 +33,8 @@ pipeline {
     }
 
     stage('Deploy to Tomcat') {
-          steps {
-               script {
-                      // Deploy to Tomcat using the Deploy to container Plugin
-                       deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://localhost:8080/')], contextPath: null, war: '**/*.war'
-                   }
-             }
-       }
-
+       steps {
+         deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://localhost:8081/')], contextPath: 'cicd-test', war: '**/target/cicd.war'        }
+    }
   }
 }
