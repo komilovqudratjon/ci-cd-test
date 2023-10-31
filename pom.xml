@@ -28,6 +28,8 @@
         <sonar.language>java</sonar.language>
     </properties>
 
+    <packaging>war</packaging>
+
 
     <developers>
         <developer>
