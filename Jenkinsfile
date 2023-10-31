@@ -28,10 +28,17 @@ pipeline {
     }
 
     stage('Deploy to Tomcat') {
-      steps {
-         // Run the Spring Boot application
-         bat "start /b java -jar C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\task-three\\target\\cicd.jar > output.log 2>&1"
-     }
+       steps {
+           // Copy the WAR to the Tomcat webapps directory
+          bat "copy C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\task-three\\target\\your-app-name.war C:\\path-to-tomcat\\webapps\\"
+      }
     }
+    stage('Start Tomcat') {
+        steps {
+            // Start Tomcat
+            bat "C:\\path-to-tomcat\\bin\\startup.bat"
+        }
+    }
+
   }
 }
